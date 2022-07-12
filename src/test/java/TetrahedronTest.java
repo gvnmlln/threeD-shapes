@@ -1,18 +1,23 @@
 import org.junit.Test;
 import shapes.Tetrahedron;
 import static org.junit.Assert.assertEquals;
+import static common.Common.roundDoubleToTwoDecimalPlaces;
 
 public class TetrahedronTest {
 
     @Test
     public void testTetrahedronOfEdgeLengthOf1() {
         Tetrahedron tetrahedron = new Tetrahedron(1);
-        assertEquals(0.12, tetrahedron.getVolume(), 0);
+        double volume = tetrahedron.getVolume();
+        double roundedVolume = roundDoubleToTwoDecimalPlaces(volume);
+        assertEquals(0.12, roundedVolume, 0);
     }
 
     @Test
     public void testTetrahedronOfEdgeLengthOf5() {
         Tetrahedron tetrahedron = new Tetrahedron(5);
-        assertEquals(14.73, tetrahedron.getVolume(), 0);
+        double volume = tetrahedron.getVolume();
+        double roundedVolume = roundDoubleToTwoDecimalPlaces(volume);
+        assertEquals(14.73, roundedVolume, 0);
     }
 }

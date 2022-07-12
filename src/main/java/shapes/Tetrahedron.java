@@ -1,11 +1,13 @@
 package shapes;
 
 import static common.Common.cubeOfNumber;
-import static common.Common.roundToTwoDecimalPlaces;
 
-public class Tetrahedron implements Shape {
+public class Tetrahedron implements ThreeDimensionalShape {
     private int edgeLength;
 
+    /**
+     * Creates a Tetrahedron with edges of the given length
+     */
     public Tetrahedron(int edgeLength) {
         this.edgeLength = edgeLength;
     }
@@ -13,8 +15,8 @@ public class Tetrahedron implements Shape {
 
     @Override
     public double getVolume() {
+        // Volume of a tetrahedron: a^3/(6 * √2) - where a is the length of the edges
         double coefficient = 1/(6 * Math.sqrt(2));
-        double rawVolume = cubeOfNumber(this.edgeLength) * coefficient;
-        return roundToTwoDecimalPlaces(rawVolume);
+        return cubeOfNumber(this.edgeLength) * coefficient;
     }
 }
