@@ -1,12 +1,14 @@
 package shapes;
 
-import static common.Common.cubeOfNumber;
+import static common.Common.cubeNumber;
 
 public class Tetrahedron implements ThreeDimensionalShape {
-    private int edgeLength;
+
+    private final int edgeLength;
 
     /**
      * Creates a Tetrahedron with edges of the given length
+     * @param edgeLength length of the Tetrahedron's edges
      */
     public Tetrahedron(int edgeLength) {
         this.edgeLength = edgeLength;
@@ -17,6 +19,6 @@ public class Tetrahedron implements ThreeDimensionalShape {
     public double getVolume() {
         // Volume of a tetrahedron: a^3/(6 * √2) - where a is the length of the edges
         double coefficient = 1/(6 * Math.sqrt(2));
-        return cubeOfNumber(this.edgeLength) * coefficient;
+        return cubeNumber(this.edgeLength) * coefficient;
     }
 }

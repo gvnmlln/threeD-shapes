@@ -1,27 +1,25 @@
 package common;
 
-import shapes.ThreeDimensionalShape;
-
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 public class Common {
+
     /**
-     * Accepts a double value and rounds it to two decimal places
-     * @param value
-     * @return value rounded to two decimal places
+     * Rounds a number to two decimal places
+     * @param number number to be rounded
+     * @return rounded number
      */
-    public static double roundDoubleToTwoDecimalPlaces(double value) {
-        BigDecimal rounded = BigDecimal.valueOf(value);
-        rounded = rounded.setScale(2, BigDecimal.ROUND_HALF_UP);
-        return rounded.doubleValue();
+    public static double roundNumberToTwoDecimalPlaces(double number) {
+        return BigDecimal.valueOf(number).setScale(2, RoundingMode.HALF_UP).doubleValue();
     }
 
     /**
-     * Cubes a given numeric value
-     * @param value
-     * @return the cube of the value
+     * Cubes a number
+     * @param number number to be cubed
+     * @return the cubed number
      */
-    public static double cubeOfNumber(double value) {
-        return value*value*value;
+    public static double cubeNumber(double number) {
+        return number*number*number;
     }
 }

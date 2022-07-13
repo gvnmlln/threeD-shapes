@@ -2,7 +2,7 @@ package shapes;
 
 public interface ThreeDimensionalShape {
     /**
-     * Gets the volume of a given ThreeDimensionalShape from it's dimensions
+     * Gets the volume of a ThreeDimensionalShape calculated from its dimensions
      */
     double getVolume();
 }
